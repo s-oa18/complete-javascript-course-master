@@ -11,12 +11,15 @@ The spread operator can be used to expand an array into all its element. unpacki
 
 For instance; *without The Spread Operator*; This is how we can add numbers at the beginning of this array (arr).
 
-***javascript
+
+
+
+```javascript
 const arr = [3, 4, 5];
 const badNewArr = [1, 2, arr[0] , arr[1], arr[2]];
 console.log badNewArr;
 
-***
+```
 
 
 
