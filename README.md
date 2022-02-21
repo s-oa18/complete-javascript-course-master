@@ -11,7 +11,7 @@
 This is an ES6 feature and its a way of unpacking values from an array or an object into separate variables i.e. Unpacking a complex data structure into a smaller data structure like a variable.
 * Retrieving an array into its own variable:
 
-  *Without destructuring*
+  *Without Destructuring*
   
   ```javascript
   const arr = [2, 3, 4];
@@ -24,7 +24,7 @@ This is an ES6 feature and its a way of unpacking values from an array or an obj
   //output will be (2, 3, 4)
   ```
   
-  *With destructuring*
+  *With Destructuring*
   
   All the three variables can be declared at the same time;
   ```javascript
@@ -37,6 +37,7 @@ This is an ES6 feature and its a way of unpacking values from an array or an obj
 The square bracket is used in destructuring arrays. Whenever JavaScript sees '[]' square bracket at the left side of an '=' equal sign, it knows it should perform destructuring.
 
 * Switching variables
+
 Let say you have an object 
 ```javascript
 const agency = {
@@ -46,10 +47,36 @@ department: ['Marketing', 'Sales', 'Procurement'],
 paidService: ['Web design', 'Graphic design', 'SocialMedia Marketing'],
 freeService: ['Web video Creation', 'Campaigning', 'Public Relations'],
 
-bookAgency: function (Paid Index, Free Index){
-             return 
-}
+bookAgency: function (paidIndex, freeIndex){
+             return [this.paidServices[paidIndex], this.freeServices[freeIndex]]
+};
 ```
+
+To switch 'Marketing' and 'Sales' from 'department' array; you first have to list them from the department array
+```javascript
+let [first, second] = department.agency
+console.log(first, second);
+
+//output will be (Marketing, Sales)
+```
+
+*Without Destructuring;*
+
+Switching first and Second values from the output will be;
+```javascript
+const temp = first;
+      first = second;
+      second = temp;
+console.log(first,second);
+```
+
+*With Destructuring;*
+
+```javascript
+   [first, second] = [second, first];
+   console.log(first, second);
+```
+
 
 
 
