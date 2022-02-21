@@ -9,9 +9,32 @@
 ### Destructuring Arrays
 
 This is an ES6 feature and its a way of unpacking values from an array or an object into separate variables i.e. Unpacking a complex data structure into a smaller data structure like a variable.
-
-
-***The Spread Operator***
+* Retrieving an array into its own variable 
+  *Without destructuring*
+  
+  ```javascript
+  const arr = [2, 3, 4];
+  const a = arr[0];
+  const b = arr[1];
+  const c = arr[2];
+  
+  console.log(a, b, c);
+  
+  //output will be (2, 3, 4)
+  ```
+  
+  *With destructuring*
+  All the three variables can be declared at the same time;
+  ```javascript
+  const arr = [2, 3, 4];
+  const [x, y, z] = arr;
+  console.log(x, y, z);
+  
+  //output will be (2, 3, 4)
+  ```
+  The square bracket is used in destructuring arrays. Whenever JavaScript sees [] square bracket at the left on '=' equal sign, it knows it should perform destructuring.
+  
+### The Spread Operator
 
 The spread operator can be used to expand an array into all its element. unpacking all array elements at once.
 
