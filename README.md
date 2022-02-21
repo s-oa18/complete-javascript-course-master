@@ -6,7 +6,7 @@
 
 ## DATA STRUCTURES, MODERN OPERATORS AND STRINGS
 
-###Destructuring Arrays###
+### Destructuring Arrays
 
 This is an ES6 feature and its a way of unpacking values from an array or an object into separate variables i.e. Unpacking a complex data structure into a smaller data structure like a variable.
 
