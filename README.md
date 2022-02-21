@@ -38,7 +38,7 @@ The square bracket is used in destructuring arrays. Whenever JavaScript sees '[]
 
 * Switching variables
 
-Let say you have an object 
+Let's say you have an object called agency;
 ```javascript
 const agency = {
 name: 'Rally Digital',
@@ -52,7 +52,7 @@ bookAgency: function (paidIndex, freeIndex){
 };
 ```
 
-To switch 'Marketing' and 'Sales' from 'department' array; you first have to list them from the department array
+To switch 'Marketing' and 'Sales' from 'department' property; you first have to list them from the department array
 ```javascript
 let [first, second] = department.agency
 console.log(first, second);
@@ -77,8 +77,60 @@ console.log(first,second);
    console.log(first, second);
 ```
 
+* Return an array from a function and destruct the result into different variables
 
+*To return an array from the function,* 
+let's consider the function (bookAgency) from the object above;
 
+```javascript
+agency.bookAgency(0, 1);
+console.log(agency.bookAgency(0, 1));
+
+//output ; ['Web design', 'Campaigning']
+```
+This gives an **array** of 'Web design' and 'Campaigning', because the values 0 and 1 in the parenthesis points to the indexes of paidService and freeService properties (paidIndex and freeIndex). Therefore a 0 paidIndex corresponds to 'Web design' and 1 freeindex corresponds to 'Campaigning'. 
+
+*Destructuring the array;*
+```javascript
+const [paid, free] = agency.bookAgency(0, 1);
+console.log(paid, free);
+
+//output; ('Web design', 'Campaigning')
+```
+
+* Nested Destructuring
+
+For a nested array;
+```javascript
+let nested = [1, 4, [6, 8]];
+ 
+// destructuring 1 and [6, 8] from nested will be;
+
+const [a, , b] = nested;
+console.log(a, b);
+
+//output; 1, [6, 8]
+```
+JavaScript recognises the space between a and b ([a, , b]) and skips the corresponding value in the array, i.e 4.
+
+*To destruct all three variables i.e. 1, and [6, 8]*
+
+```javascript
+const [a, , [b, c] = nested;
+console.log(a, b, c);
+
+//output; 1, 6, 8
+```
+
+**NB:** For default values where the length of an array is unknown;
+Assign eac variable in a destructuring a value of 1. For instance;
+```javascript
+const [a=1, b=1, c=1, d=1] = [8, 9];
+console.log(a, b, c, d);
+
+//output; 8, 9, 1, 1
+//This shows there are only two values in the array; 8 and 9
+```
 
   
 ### The Spread Operator
