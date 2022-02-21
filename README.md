@@ -34,7 +34,25 @@ This is an ES6 feature and its a way of unpacking values from an array or an obj
   
   //output will be (2, 3, 4)
   ```
-The square bracket is used in destructuring arrays. Whenever JavaScript sees [] square bracket at the left on '=' equal sign, it knows it should perform destructuring.
+The square bracket is used in destructuring arrays. Whenever JavaScript sees '[]' square bracket at the left side of an '=' equal sign, it knows it should perform destructuring.
+
+* Switching variables
+Let say you have an object 
+```javascript
+const agency = {
+name: 'Rally Digital',
+location: '21 Adjiringano St',
+department: ['Marketing', 'Sales', 'Procurement'],
+paidService: ['Web design', 'Graphic design', 'SocialMedia Marketing'],
+freeService: ['Web video Creation', 'Campaigning', 'Public Relations'],
+
+bookAgency: function (Paid Index, Free Index){
+             return 
+}
+```
+
+
+
   
 ### The Spread Operator
 
