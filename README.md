@@ -9,7 +9,7 @@
 ### Destructuring Arrays
 
 This is an ES6 feature and its a way of unpacking values from an array or an object into separate variables i.e. Unpacking a complex data structure into a smaller data structure like a variable.
-* Retrieving an array into its own variable:
+* **Retrieving an array into its own variable:**
 
   *Without Destructuring*
   
@@ -36,7 +36,7 @@ This is an ES6 feature and its a way of unpacking values from an array or an obj
   ```
 The square bracket is used in destructuring arrays. Whenever JavaScript sees '[]' square bracket at the left side of an '=' equal sign, it knows it should perform destructuring.
 
-* Switching variables
+* **Switching variables**
 
 Let's say you have an object called agency;
 ```javascript
@@ -77,7 +77,7 @@ console.log(first,second);
    console.log(first, second);
 ```
 
-* Return an array from a function and destruct the result into different variables
+* **Return an array from a function and destruct the result into different variables**
 
 *To return an array from the function,* 
 let's consider the function (bookAgency) from the object above;
@@ -98,7 +98,7 @@ console.log(paid, free);
 //output; ('Web design', 'Campaigning')
 ```
 
-* Nested Destructuring
+* **Nested Destructuring**
 
 For a nested array;
 ```javascript
@@ -113,7 +113,7 @@ console.log(a, b);
 ```
 JavaScript recognises the space between a and b ([a, , b]) and skips the corresponding value in the array, i.e 4.
 
-*To destruct all three variables i.e. 1, and [6, 8]*
+*To destructure all three variables i.e. 1, and [6, 8]*
 
 ```javascript
 const [a, , [b, c] = nested;
@@ -132,10 +132,23 @@ console.log(a, b, c, d);
 //This shows there are only two values in the array; 8 and 9
 ```
 
+### Destructuring Objects
+
+Curly braces '{}' is used in destructuring objects. The variable names of the properties to be retrieved from the object must directly match the property names of the object. Lets look at an example; considering the object above;
+```javascript
+const {name, department} = agency;
+console.log(name, department);
+```
+
+Destructuring objects is an extremely useful addition to the JS language especially when dealing with the results on an API call (Retrieving data from another web application).
+
+
+
+
   
 ### The Spread Operator
 
-The spread operator can be used to expand an array into all its element. unpacking all array elements at once.
+The spread operator can be used to expand an array into all its element. Unpacking all array elements at once.
 
 For instance; *without The Spread Operator*; This is how we can add numbers at the beginning of this array (arr).
 
