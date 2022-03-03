@@ -108,7 +108,7 @@ console.log(paid, free);
 //output; ('Web design', 'Campaigning')
 ```
 
-- **Nested Destructuring**
+- **Nested Array Destructuring**
 
 For a nested array;
 
@@ -154,17 +154,94 @@ const { name, department } = agency;
 console.log(name, department);
 ```
 
-Destructuring objects is an extremely useful addition to the JS language especially when dealing with the results from an API call (Retrieving data from another web application).
+Destructuring objects is an extremely useful addition to the JS language especially when dealing with the results from an API call (Retrieving data from another web application). The order of element does not matter in destructuring of objects like it is in arrays.
 
-### The Spread Operator
+**To change the variable names;**
+
+```javascript
+const { name: agencyName, department: agencyDepartment } = agency;
+console.log(agencyName, agencyDepartment);
+
+//output; agencyName, agencyDepartment
+```
+
+- **Setting Default values**
+
+The Equal sign '=' is used to set default values.
+
+```javascript
+const { menu = [], paidServices: paid = [] } = agency;
+console.log(menu, paid);
+```
+
+Setting default values is helpful when the code is not accessing in the application and data is accessed from another location like API calls.
+
+- **Mutating Variables while destructuring objects**
+
+Consider the example below;
+
+```javascript
+let a = 70; b = 10;
+const obj = {a: 20; b: 40; c: 60};
+
+//To change the values of a and b from 70 and 10 to 20 and 40;
+
+({a, b} = obj);
+console.log(a, b);
+
+//output; 20, 40
+```
+
+- **Nested Objects Destructuring**
+  This is used when you need to write a complex function with alot of parameters that might be hard to specify.
+  _Refer to starter code from course for code example_
+
+### The Spread Operator (...)
 
 The spread operator can be used to expand an array into all its element. Unpacking all array elements at once.
 
-For instance; _without The Spread Operator_; This is how we can add numbers at the beginning of this array (arr).
+For instance;
+
+_without The Spread Operator_;
+
+This is how we can add numbers at the beginning of this array (arr).
 
 ```javascript
 const arr = [3, 4, 5];
-const badNewArr = [1, 2, arr[0] , arr[1], arr[2]];
-console.log badNewArr;
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
 
+//output; [1, 2, 3, 4, 5]
 ```
+
+_Using The Spread Operator;_
+
+```javascript
+const arr = [3, 4, 5];
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+//output; [1, 2, 3, 4, 5]
+```
+
+Therefore the spread operator '...' unpacks all the values in arr. It is similar to destructuring because it helps us get elements out of arrays. The big difference is that The Spread Operator takes all elements from an array and it does not create new variables as a consequence , we only use it in places where we would rather write values separated by commas (,).
+
+_Two important use cases of the spread operator is to create shallow copies of arrays and to merge two arrays together_
+
+```javascript
+//Copy array;
+
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//This makes a copy of elements in the mainMenu array from the restaurant object.
+```
+
+```javascript
+//Joining two arrays;
+
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+//This lists (makes a copy of) all the elements in mainMenu and starterMenu in the restaurant object.
+```
+
+The spread operator works on all iterables. Iterables are arrays, strings, maps or sets but not objects. Since ES 2018 the spread operator works on objects even though objects are not iterables.
