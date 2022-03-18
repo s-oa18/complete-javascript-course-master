@@ -2,7 +2,7 @@
 
 My JavaScript learning roadmap - "The Complete JavaScript Course 2022: From Zero to Expert!" by Jonas Schmedtman.
 
-## Resources
+## Resource
 
 [The Complete JavaScript Course 2022: Zero to Expert!](https://www.udemy.com/course/the-complete-javascript-course/)
 
@@ -246,11 +246,12 @@ const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 
 The spread operator works on all iterables. Iterables are arrays, strings, maps or sets but not objects. Since ES 2018 the spread operator works on objects even though objects are not iterables.
 
-### The Rest Pattern And Parameters ( ... )
+## The Rest Pattern And Parameters ( ... )
 
-The Rest pattern looks exactly like the spread operator but does the opposite of the spread operator. The spread operator use cases are to build new arrays or to pass multiple values into a function. In both cases the spread operator is used to expand arrays into indivdual elements. The Rest pattern uses the same syntax but collect multiple elements and condense them into arrays.
+The Rest pattern looks exactly like the spread operator but does the opposite of the spread operator. The spread operator's use cases are to build new arrays or to pass multiple values into a function. In both cases the spread operator is used to expand arrays into indivdual elements. The Rest pattern uses the same syntax but collect multiple elements and condense them into arrays.
 
-The Rest pattern and parameters is used in cases to where we would otherwise write variable names separated by commas but not values separated by commas (spread operator).
+The Rest pattern and parameters is used in cases to write variable names separated by commas but not values separated by commas (spread operator).
+Also the spread operator is found at the right side of the equal sign ('=') but the Rest pattern is used on the left side of the equal sign ('=').
 
 ```javascript
 // Refer to data structures starter for code examples.
