@@ -245,3 +245,13 @@ const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
 ```
 
 The spread operator works on all iterables. Iterables are arrays, strings, maps or sets but not objects. Since ES 2018 the spread operator works on objects even though objects are not iterables.
+
+### The Rest Pattern And Parameters ( ... )
+
+The Rest pattern looks exactly like the spread operator but does the opposite of the spread operator. The spread operator use cases are to build new arrays or to pass multiple values into a function. In both cases the spread operator is used to expand arrays into indivdual elements. The Rest pattern uses the same syntax but collect multiple elements and condense them into arrays.
+
+The Rest pattern and parameters is used in cases to where we would otherwise write variable names separated by commas but not values separated by commas (spread operator).
+
+```javascript
+// Refer to data structures starter for code examples.
+```
