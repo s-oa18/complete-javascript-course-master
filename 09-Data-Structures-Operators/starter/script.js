@@ -43,7 +43,13 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
+
+  orderPizza: function (mainIngredients, ...otherIngredients) {
+    console.log(mainIngredients);
+    console.log(otherIngredients);
+  },
 };
+/*
 
 // Destructuring Objects
 restaurant.orderDelivery({
@@ -79,6 +85,7 @@ const obj = { a: 23, b: 7, c: 14 };
 
 ({ a, b } = obj);
 console.log(a, b);
+
 
 //Nested objects
 const {
@@ -126,3 +133,42 @@ console.log(newRestaurant);
 const restaurantcopy = { ...restaurant };
 restaurantcopy.name = 'Ristorante Roma';
 console.log(restaurantName);
+
+*/
+// REST PATTERN AND PARAMETERS
+
+// Destructuring Arrays
+
+//SPREAD, because on the RIGHT side of =
+//const arr = [1, 2, ...[3, 4]];
+
+//REST, because on the LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherfood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherfood);
+
+// Destructuring Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// Destructuring Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms');
