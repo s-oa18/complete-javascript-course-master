@@ -134,7 +134,7 @@ const restaurantcopy = { ...restaurant };
 restaurantcopy.name = 'Ristorante Roma';
 console.log(restaurantName);
 
-*/
+
 // REST PATTERN AND PARAMETERS
 
 // Destructuring Arrays
@@ -172,3 +172,36 @@ add(...x);
 
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
+
+*/
+//Short Circuiting (&& and ||)
+// OR Operator
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 23 || null);
+
+//restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+//With Shortcircuiting,
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+//AND Operator
+// Works as the exact opposite of OR operator
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+//Pratical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+//Using && Operator
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
