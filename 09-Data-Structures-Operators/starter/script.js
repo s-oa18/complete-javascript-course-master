@@ -173,7 +173,7 @@ add(...x);
 restaurant.orderPizza('mushrooms', 'onions', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
 
-*/
+
 //Short Circuiting (&& and ||)
 // OR Operator
 console.log(3 || 'Jonas');
@@ -205,3 +205,19 @@ if (restaurant.orderPizza) {
 
 //Using && Operator
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+
+restaurant.numGuests = 0;
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+//Nullish: null and undefined (Not 0 or '')
+const questCorrect = restaurant.numGuests ?? 10;
+console.log(questCorrect);
+
+*/
+
+const rest1 = {
+  name = 'Capri',
+  numGuest
+}

@@ -256,3 +256,15 @@ Also the spread operator is found at the right side of the equal sign ('=') but 
 ```javascript
 // Refer to data structures starter for code examples.
 ```
+
+## Short Circuiting (&& and ||)
+
+Short circuiting in the case of the OR operator (||) means if the first value is a truthy value it will immediately return that first value.
+
+The AND operator (&&) works in the exact opposite of the OR operator. The AND operator short circuits when the first value is a falsy value and immediately returns that value without evaluating the second operand.
+
+```javascript
+//Refer to Data Structures Starter folder for code examples.
+```
+
+## The Nullish Coalesing Operator (??)
