@@ -293,6 +293,41 @@ const game = {
   },
 };
 
+//Destructuring
+const [player1, player2] = game.players;
+console.log(player1, player2);
+
+//REST parameter
+const [gk, ...fieldPlayers] = player1;
+console.log(gk, fieldPlayers);
+
+//The spread operator
+const allPlayers = [...player1, ...player2];
+console.log(allPlayers);
+
+const players1Final = [...player1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+
+//Nested destructuring
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+};
+
+printGoals('Davies', 'Muller', 'Lewandowski');
+printGoals(...game.scored);
+
+/*
+if (team1 < team2) {
+  console.log('team 1 is likely to win');
+} else console.log('team 2 is likely to win');
+*/
+
+team1 < team2 && console.log('Team 1 is more likely to win');
 /*
 //mysolution
 const player1 = game.players[0];
