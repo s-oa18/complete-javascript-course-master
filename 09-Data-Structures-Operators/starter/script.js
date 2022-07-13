@@ -176,6 +176,7 @@ restaurant.orderPizza('mushrooms');
 
 //Short Circuiting (&& and ||)
 // OR Operator
+
 console.log(3 || 'Jonas');
 console.log('' || 'Jonas');
 console.log(true || 0);
@@ -215,9 +216,105 @@ console.log(guest2);
 const questCorrect = restaurant.numGuests ?? 10;
 console.log(questCorrect);
 
-*/
+
 
 const rest1 = {
-  name = 'Capri',
-  numGuest
-}
+  name: 'Capri',
+  //numGuest: 20,
+  numGuest: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+//OR assignment operator
+//rest1.numGuest = rest1.numGuest || 10;
+//rest2.numGuest = rest2.numGuest || 10;
+//rest1.numGuest ||= 10;
+//rest2.numGuest ||= 10;
+
+//nullish assignment operator null or undefined()
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+// AND assignment operator
+//rest1.owner = rest1.owner && '<ANONYMOUS>';
+//rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+*/
+
+// Coding Challenge #1
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+/*
+//mysolution
+const player1 = game.players[0];
+const player2 = game.players[1];
+
+const gk = 'Neuer';
+const fieldsPlayers = [
+  'Pavard',
+  'Martinez',
+  'Alaba',
+  'Davies',
+  'Kimmich',
+  'Goretzka',
+  'Coman,Muller',
+  'Gnarby',
+  'Lewandowski',
+];
+
+const allPlayers = [...game.players[0], ...game.players[1]];
+
+const players1Final = [...game.players[0], 'Thiago', 'Coutinho', 'Perisic'];
+
+const team1 = { ...game.odds };
+console.log(team1);
+*/
